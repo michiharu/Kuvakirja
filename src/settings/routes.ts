@@ -6,9 +6,11 @@ import WatchIcon from "@material-ui/icons/TurnedIn";
 import Dashboard from "../pages/dashboard/dashboard";
 import Login from "../pages/login/login";
 
+import * as env from '../settings/env.json';
+
 export const loginRoute: Route = {
   layout: '',
-  path: '/Kuvakirja/login',
+  path: `${env.useGithubIo ? env.repositoryPath : ""}/login`,
   exact: true,
   label: 'Login',
   component: Login
@@ -16,7 +18,7 @@ export const loginRoute: Route = {
 
 export const dashboardRoute: Route = {
   layout: '',
-  path: '/Kuvakirja/top',
+  path: `${env.useGithubIo ? env.repositoryPath : ""}/top`,
   exact: false,
   label: 'Top',
   Icon: DashboardIcon,
@@ -27,14 +29,14 @@ const routes: Route[] = [
   dashboardRoute,
   {
     layout: '',
-    path: '/Kuvakirja/search',
+    path: `${env.useGithubIo ? env.repositoryPath : ""}/search`,
     exact: false,
     label: 'Search',
     Icon: SearchIcon,
   },
   {
     layout: '',
-    path: '/Kuvakirja/watch',
+    path: `${env.useGithubIo ? env.repositoryPath : ""}/watch`,
     exact: false,
     label: 'Watch',
     Icon: WatchIcon
