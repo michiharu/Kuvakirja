@@ -8,7 +8,7 @@ import Login from "../pages/login/login";
 
 export const loginRoute: Route = {
   layout: '',
-  path: '/login',
+  path: '/Kuvakirja/login',
   exact: true,
   label: 'Login',
   component: Login
@@ -16,7 +16,7 @@ export const loginRoute: Route = {
 
 export const dashboardRoute: Route = {
   layout: '',
-  path: '/top',
+  path: '/Kuvakirja/top',
   exact: false,
   label: 'Top',
   Icon: DashboardIcon,
@@ -27,14 +27,14 @@ const routes: Route[] = [
   dashboardRoute,
   {
     layout: '',
-    path: '/search',
+    path: '/Kuvakirja/search',
     exact: false,
     label: 'Search',
     Icon: SearchIcon,
   },
   {
     layout: '',
-    path: '/watch',
+    path: '/Kuvakirja/watch',
     exact: false,
     label: 'Watch',
     Icon: WatchIcon
