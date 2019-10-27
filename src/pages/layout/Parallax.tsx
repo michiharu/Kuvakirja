@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import { makeStyles, Theme } from '@material-ui/core/styles';
 
 const imageHeight = 600;
-const bottom = 200;
 
 const useStyles = makeStyles((theme: Theme) => ({
   parallax: {
