@@ -4,8 +4,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/styles';
 import { Provider } from 'react-redux';
 import { setupStore } from './redux/store';
-import App from './App';
 import theme from './theme';
+import PageRouter from './pages/page-router';
 
 const Providers = () => {
   const store = setupStore();
@@ -13,7 +13,7 @@ const Providers = () => {
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <App />
+        <PageRouter/>
       </ThemeProvider>
     </Provider>
   );

@@ -1,24 +1,21 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import Layout from './layout/layout';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import { useAuth } from '../redux/authModule';
 
-import { loginRoute, dashboardRoute } from '../settings/routes';
+import routes, { loginRoute, dashboardRoute } from '../settings/routes';
 
 const LoginRouter = () => {
-  const loginUrl = loginRoute.layout + loginRoute.path;
-  const dashboardUrl = dashboardRoute.layout + dashboardRoute.path
+  const loginUrl = loginRoute.auth + loginRoute.path;
+  const dashboardUrl = dashboardRoute.auth + dashboardRoute.path
   const { isLogin } = useAuth();
 
   return (
-    <BrowserRouter>
-      <Switch>
-        {!isLogin && <Route exact path={loginUrl} component={loginRoute.component!} />}
-        {!isLogin && <Redirect to={loginUrl} />}
-        <Redirect exact path={loginUrl} to={dashboardUrl} />}
-        <Route component={Layout} />
-      </Switch>
-    </BrowserRouter>
+    <Switch>
+      {!isLogin && <Route exact path={loginUrl} component={loginRoute.component!} />}
+      {!isLogin && <Redirect to={loginUrl} />}
+      <Redirect exact path={loginUrl} to={dashboardUrl} />}
+      {routes.map((route, key) => <Route key={key} {...route} />)}
+    </Switch>
   );
 }
 

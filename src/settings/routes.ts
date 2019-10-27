@@ -3,13 +3,13 @@ import DashboardIcon from "@material-ui/icons/Dashboard";
 import SearchIcon from "@material-ui/icons/Search";
 import WatchIcon from "@material-ui/icons/TurnedIn";
 
-import Dashboard from "../pages/dashboard/dashboard";
+import Dashboard from "../pages/top/top";
 import Login from "../pages/login/login";
 
 import * as env from '../settings/env.json';
 
 export const loginRoute: Route = {
-  layout: '',
+  auth: false,
   path: `${env.useGithubIo ? env.repositoryPath : ""}/login`,
   exact: true,
   label: 'Login',
@@ -17,8 +17,8 @@ export const loginRoute: Route = {
 };
 
 export const dashboardRoute: Route = {
-  layout: '',
-  path: `${env.useGithubIo ? env.repositoryPath : ""}/top`,
+  auth: false,
+  path: `${env.useGithubIo ? env.repositoryPath : ""}/`,
   exact: false,
   label: 'Top',
   Icon: DashboardIcon,
@@ -28,14 +28,14 @@ export const dashboardRoute: Route = {
 const routes: Route[] = [
   dashboardRoute,
   {
-    layout: '',
+    auth: false,
     path: `${env.useGithubIo ? env.repositoryPath : ""}/search`,
     exact: false,
     label: 'Search',
     Icon: SearchIcon,
   },
   {
-    layout: '',
+    auth: true,
     path: `${env.useGithubIo ? env.repositoryPath : ""}/watch`,
     exact: false,
     label: 'Watch',

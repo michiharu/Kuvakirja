@@ -1,7 +1,7 @@
 import { SvgIconProps } from '@material-ui/core/SvgIcon';
 
 interface Route {
-  layout: string;
+  auth: boolean;
   path: string;
   exact: boolean;
   label: string;
