@@ -24,5 +24,4 @@ export const hexToRgb = (input: string) => {
   );
 };
 
-export const infoColor = ["#00acc1", "#26c6da", "#00acc1", "#00d3ee"];
-export const blackColor = "#000";
+export const transparentBGColor = "rgba(0,0,0,0.4)";

@@ -7,6 +7,11 @@ const theme = createMuiTheme({
     primary: teal,
     secondary: deepPurple,
   },
+  typography: {
+    button: {
+      textTransform: "none"
+    }
+  }
 });
 
 export default theme;

@@ -5,7 +5,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import { Provider } from 'react-redux';
 import { setupStore } from './redux/store';
 import theme from './theme';
-import PageRouter from './pages/page-router';
+import Layout from './pages/layout/layout';
 
 const Providers = () => {
   const store = setupStore();
@@ -13,7 +13,7 @@ const Providers = () => {
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <PageRouter/>
+        <Layout/>
       </ThemeProvider>
     </Provider>
   );

@@ -52,9 +52,13 @@ export default function Parallax(props: ParallaxProps) {
     'translate3d(0,' + windowScrollTop + 'px,0)'
   );
   React.useEffect(() => {
-    window.addEventListener('scroll', resetTransform);
+    if (window.innerWidth >= 768) {
+      window.addEventListener('scroll', resetTransform);
+    }
     return function cleanup() {
-      window.removeEventListener('scroll', resetTransform);
+      if (window.innerWidth >= 768) {
+        window.removeEventListener('scroll', resetTransform);
+      }
     };
   });
   const resetTransform = () => {
