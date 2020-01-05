@@ -1,4 +1,4 @@
-import { createSlice } from 'redux-starter-kit';
+import { createSlice, PayloadAction } from 'redux-starter-kit';
 import { useSelector } from 'react-redux';
 import { rootReducer } from './store';
 
@@ -16,7 +16,7 @@ const authModule = createSlice({
     name: "auth",
     initialState: authInitialState,
     reducers: {
-        login: (state, action) =>         ({...state, loading: true}),
+        login: (state, action: PayloadAction) =>         ({...state, loading: true}),
         loginSuccess: (state, action) =>  ({isLogin: true, loading: false}),
         loginError: (state, action) =>    ({isLogin: false, loading: false}),
         

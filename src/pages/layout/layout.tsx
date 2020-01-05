@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 import PageRouter from '../page-router';
-import { AppBar, Toolbar, Box, IconButton, Button, Container, Typography } from '@material-ui/core';
+import { AppBar, Toolbar, Box, Button, Container } from '@material-ui/core';
 import { transparentBGColor } from '../../jss/util';
 
 

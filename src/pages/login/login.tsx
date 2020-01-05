@@ -79,8 +79,7 @@ export default function Login() {
   const dispatch = useDispatch();
   const handleClickLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const loginParams = {id: email, password};
-    dispatch(authModule.actions.login(loginParams));
+    dispatch(authModule.actions.login());
   }
 
   return (
